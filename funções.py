@@ -1,5 +1,3 @@
-print('Oi Teste')
-print('Oi!')
-
-print("Testando github")
-print("Testando github")
+# EP - Design de Software
+# Equipe: Jonas Bonfá Pelegrina e Layne Pereira da Silva
+# Data: 16/10/2020
