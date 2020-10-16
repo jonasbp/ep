@@ -25,6 +25,3 @@ def sorteia_cartas(quantidade):
         i += 1
     
     return sorteados
-
-
-print(sorteia_cartas(2))

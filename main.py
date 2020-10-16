@@ -7,7 +7,7 @@
 
 
 
-#Importando as funções do arquivo funções.py
+# Importando as funções do arquivo funções.py
 import funções as back
 
 
@@ -33,4 +33,29 @@ if fichas_atuais >= fichas_apostadas:
     print("APOSTA CONFIRMADA: SALDO SUFICIENTE")
 else:
     print("APOSTA NEGADA: SALDO INSUFICIENTE")
-    fichas_apostadas   = int(input("Quantas fichas deseja apostar no (vencedor?)"))
+    fichas_apostadas = int(input("Quantas fichas deseja apostar no (vencedor?)"))
+
+# Distribuição das cartas aos participantes
+jogador = (back.sorteia_cartas(2))
+banco = (back.sorteia_cartas(2))
+
+# Realiza a conta das cartas
+jogador_soma = jogador[0] + jogador[1]
+banco_soma = banco[0] + banco[1]
+jogador_soma = 8
+banco_soma = 8
+
+
+if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9):
+    if vencedor_apostado == 3:
+        print("Uau você votou no empate e empatou")
+        # fichas_atuais += ()
+    else:
+        print("O jogo empatou e você não votou no empate,boa sorte na próxima :)")
+
+elif jogador_soma == 8 or jogador_soma == 9:
+    print("JOGADOR GANHOU")
+elif banco_soma == 8 or banco_soma == 8:
+    print("BANCO GANHOU")
+else:
+    print("Continuando")
