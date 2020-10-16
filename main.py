@@ -5,4 +5,10 @@
 #Importando as funções do arquivo funções.py
 import funções as back
 
-print(back.teste(1))
+
+print("Você tem X fichas")
+print("[1] - APOSTAR NO JOGADOR")
+print("[2] - APOSTAR NO BANCO" )
+print("[3] - APOSTAR NO EMPATE")
+vencedor_apostado = input("Em quem você deseja apostar? digite o número: ")
+fichas_apostado   = input("Quantas fichas deseja apostar no (vencedor?)")
