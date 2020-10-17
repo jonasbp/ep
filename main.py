@@ -9,6 +9,7 @@
 
 # Importando as funções do arquivo funções.py
 import funções as back
+import math
 
 
 fichas_atuais = 10
@@ -42,20 +43,25 @@ banco = (back.sorteia_cartas(2))
 # Realiza a conta das cartas
 jogador_soma = jogador[0] + jogador[1]
 banco_soma = banco[0] + banco[1]
-jogador_soma = 8
-banco_soma = 8
+jogador_soma = 9
+banco_soma = 9
 
-
-if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9):
-    if vencedor_apostado == 3:
+# Caso as cartas já resultem em 8 ou 9
+if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma == 9):
+# Caso aposte no empate e o empate ganhe
+    if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
         print("Uau você votou no empate e empatou")
-        # fichas_atuais += ()
-    else:
-        print("O jogo empatou e você não votou no empate,boa sorte na próxima :)")
+        fichas_atuais += (fichas_apostadas * 8)
+# Caso aposte no jogador e o jogador ganhe
+    if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 or banco_soma != 9) and (vencedor_apostado == 1):
+        print("JOGADOR GANHOU")
+        fichas_atuais += fichas_apostadas
+# Caso aposte no banco e o banco ganhe
+    if (banco_soma == 8 or banco_soma == 9) and (jogador_soma != 8 or jogador_soma != 9) and (vencedor_apostado == 2):
+        print("BANCO GANHOU")
+        recebe = 0.95 * fichas_apostadas
+        print(math.floor(recebe))
 
-elif jogador_soma == 8 or jogador_soma == 9:
-    print("JOGADOR GANHOU")
-elif banco_soma == 8 or banco_soma == 8:
-    print("BANCO GANHOU")
+# Caso não resulte em 8 ou 9 o jogo continua
 else:
     print("Continuando")
