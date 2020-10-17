@@ -92,21 +92,13 @@ if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma ==
         # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
 
-# Caso não resulte em 8 ou 9 o jogo continua
-else:
-    print("Continuando pois não tinha o suficiente")
-    #Arumamos caso seja maior que 7
+# Caso não resulte em 6 ou 7 o jogo empata 
+if (jogador_soma == 6 or jogador_soma == 7) and (banco_soma == 6 or banco_soma == 7): 
+        print("Uau você votou no empate e empatou!")
+        fichas_atuais += (fichas_apostadas * 8)
+        print("Seu saldo ficou em: {0}".format(fichas_atuais))
+        # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
+else: 
+    print("O jogo continua.")
 
-# Verifica se o próximo é 6 ou 7 (Daqui a pouco)
 
-if (jogador_soma == 6) or (jogador_soma == 7): 
-    print("NÃO DISTRIBUI CARTA")
-
-
-if (banco_soma == 6) or (banco_soma == 7):
-    print("NÃO DISTRIBUI CARTA")
-
-#     if (jogador_soma <= 5) or (banco_soma <= 5):
-#         print ("DISTRIBUI MAIS UMA CARTA E SOMA RECALCULADA")
-# else:
-#     print("Segue o jogo!")
