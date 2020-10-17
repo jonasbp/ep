@@ -43,8 +43,11 @@ banco = (back.sorteia_cartas(2))
 # Realiza a conta das cartas
 jogador_soma = jogador[0] + jogador[1]
 banco_soma = banco[0] + banco[1]
-jogador_soma = 9
-banco_soma = 0
+# jogador_soma = 9
+# banco_soma = 6
+print(jogador_soma)
+print(banco_soma)
+
 
 # Caso as cartas já resultem em 8 ou 9
 if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma == 9):
@@ -52,29 +55,45 @@ if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma ==
     if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
         print("Uau você votou no empate e empatou")
         fichas_atuais += (fichas_apostadas * 8)
+        print("Seu saldo ficou em: {0}".format(fichas_atuais))
+        # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
+
+
 # Caso aposte no jogador e o jogador ganhe
-    if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 or banco_soma != 9) and (vencedor_apostado == 1):
+    elif (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 or banco_soma != 9) and (vencedor_apostado == 1):
         print("JOGADOR GANHOU")
-        fichas_atuais += fichas_apostadas
+        fichas_atuais = fichas_atuais + fichas_apostadas
+        print("Seu saldo ficou em: {0}".format(fichas_atuais))
+        # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
+
+
 # Caso aposte no banco e o banco ganhe
-    if (banco_soma == 8 or banco_soma == 9) and (jogador_soma != 8 or jogador_soma != 9) and (vencedor_apostado == 2):
+    elif (banco_soma == 8 or banco_soma == 9) and (jogador_soma != 8 or jogador_soma != 9) and (vencedor_apostado == 2):
         print("BANCO GANHOU")
         recebe = 0.95 * fichas_apostadas
-        print(math.floor(recebe))
+        recebe_correto = math.floor(recebe)
+        fichas_atuais = fichas_atuais + recebe_correto
+        print("Seu saldo ficou em: {0}".format(fichas_atuais))
+        # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
+
+#Caso aposte em algúem que não ganhou 
+    else:
+        print("Você perdeu! :(")
+        fichas_atuais = fichas_atuais - fichas_apostadas
+        print("Você tem : {0}".format(fichas_atuais))
+        # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
+
 
 # Caso não resulte em 8 ou 9 o jogo continua
 else:
-    print("Continuando")
+    print("Continuando pois não tinha o suficiente")
+    #Arumamos caso seja maior que 7
 
 # Fazer aqui em baixo
+print("--------------------------")
 if (jogador_soma == 6) or (jogador_soma == 7) or (banco_soma == 6) or (banco_soma == 7):
     print("NÃO DISTRIBUI CARTA")
     if (jogador_soma <= 5) or (banco_soma <= 5):
         print ("DISTRIBUI MAIS UMA CARTA E SOMA RECALCULADA")
 else:
     print("Segue o jogo!")
-
-#PAGAMENTO DAS APOSTAS 
-# if (jogador_soma >= 9):
-    #print("Você venceu!")
-    #print("Você tem {0} fichas".format(fichas_apostadas))
