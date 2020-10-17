@@ -43,10 +43,18 @@ banco = (back.sorteia_cartas(2))
 # Realiza a conta das cartas
 jogador_soma = jogador[0] + jogador[1]
 banco_soma = banco[0] + banco[1]
-# jogador_soma = 9
-# banco_soma = 6
+# jogador_soma = 12
+# banco_soma = 13
+
 print(jogador_soma)
 print(banco_soma)
+
+#Caso a soma das cartas for maior que 10 corrija para somente a unidade
+if (jogador_soma >= 10):
+    jogador_soma = jogador_soma % 10
+
+if banco_soma >= 10:
+    banco_soma = banco_soma % 10
 
 
 # Caso as cartas já resultem em 8 ou 9
@@ -89,11 +97,16 @@ else:
     print("Continuando pois não tinha o suficiente")
     #Arumamos caso seja maior que 7
 
-# Fazer aqui em baixo
-print("--------------------------")
-if (jogador_soma == 6) or (jogador_soma == 7) or (banco_soma == 6) or (banco_soma == 7):
+# Verifica se o próximo é 6 ou 7 (Daqui a pouco)
+
+if (jogador_soma == 6) or (jogador_soma == 7): 
     print("NÃO DISTRIBUI CARTA")
-    if (jogador_soma <= 5) or (banco_soma <= 5):
-        print ("DISTRIBUI MAIS UMA CARTA E SOMA RECALCULADA")
-else:
-    print("Segue o jogo!")
+
+
+if (banco_soma == 6) or (banco_soma == 7):
+    print("NÃO DISTRIBUI CARTA")
+
+#     if (jogador_soma <= 5) or (banco_soma <= 5):
+#         print ("DISTRIBUI MAIS UMA CARTA E SOMA RECALCULADA")
+# else:
+#     print("Segue o jogo!")
