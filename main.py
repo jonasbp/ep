@@ -63,8 +63,8 @@ while novamente:
     banco_soma = banco[0] + banco[1]
    
     # MANIPULANDO O JOGO PARA TESTES
-    jogador_soma = 4
-    banco_soma = 3
+    # jogador_soma = 4
+    # banco_soma = 3
 
     #Caso a soma das cartas for maior que 10 corrija para somente a unidade
     if (jogador_soma >= 10):
@@ -185,7 +185,7 @@ while novamente:
 
             #Caso o jogador tenha recebido uma carta
             print("ENTRANDO NA PARTE NOVA")
-
+            recebe3 = True
             #Se a carta do do jogador for 0
             if nova_carta_jogador[0] == 0:
                 if banco_soma == 0:
@@ -399,29 +399,62 @@ while novamente:
 
 
             #A maior carta ganha depois de ter distribuido a 3 carta
-            # Começar a seguir regras 3 carta
-            
-            #jogador ganhou
+            #Jogador ganhou
         elif jogador_soma > banco_soma and (vencedor_apostado == 1):
-            print("Jogador ganhou")
-            fichas_atuais += fichas_apostadas
+            # Comissão para caso o jogador ganhe
+            if baralhos == 1:
+                pagamento = fichas_apostadas
+                pagamento_ok = pagamento - (pagamento * 0.0129)
+                fichas_atuais += pagamento_ok
+            elif baralhos == 6:
+                pagamento = fichas_apostadas
+                pagamento_ok = pagamento - (pagamento * 0.0124)
+                fichas_atuais += pagamento_ok
+            else:
+                pagamento = fichas_apostadas
+                pagamento_ok = pagamento - (pagamento * 0.124)
+                fichas_atuais += pagamento_ok
             print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
             
-            #banco ganhou
+            #Banco ganhou
         elif banco_soma > jogador_soma and (vencedor_apostado == 2):
-            print("Banco Ganhou")
-            recebe = 0.95 * fichas_apostadas
-            recebe_correto = math.floor(recebe)
-            fichas_atuais += recebe_correto
+            print("O BANCO GANHOU!")
+            if baralhos == 1:
+                recebe = 0.95 * fichas_apostadas
+                recebe_correto = math.floor(recebe)
+                recebe_correto_ok = recebe_correto - (recebe_correto * 0.0101)
+                fichas_atuais += recebe_correto_ok
+            elif baralhos == 6:
+                recebe = 0.95 * fichas_apostadas
+                recebe_correto = math.floor(recebe)
+                recebe_correto_ok = recebe_correto - (recebe_correto * 0.0106)
+                fichas_atuais += recebe_correto_ok
+            else:
+                recebe = 0.95 * fichas_apostadas
+                recebe_correto = math.floor(recebe)
+                recebe_correto_ok = recebe_correto - (recebe_correto * 0.0106)
+                fichas_atuais += recebe_correto_ok
             print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
 
             #Empate
         elif jogador_soma == banco_soma and (vencedor_apostado == 3):
-            print("Empate")
-            fichas_atuais += (fichas_apostadas * 8)
-            print("Seu novo saldo é: {0}".format(fichas_atuais))
+            print("Uau! Você apostou noe empate e empatou!")
+            # Comissão da casa para empate
+            if baralhos == 1:
+                pagamento = (fichas_apostadas * 8)
+                pagamento_corrigido = pagamento - (pagamento * 0.1575)
+                fichas_atuais += pagamento_corrigido
+            elif baralhos == 6:
+                pagamento = (fichas_apostadas * 8)
+                pagamento_corrigido = pagamento - (pagamento * 0.1444)
+                fichas_atuais += pagamento_corrigido
+            else:
+                pagamento = (fichas_apostadas * 8)
+                pagamento_corrigido = pagamento - (pagamento * 0.1436)
+                fichas_atuais += pagamento_corrigido
+            print("{1}B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
             novaflag = False
 
         # Caso aposte no banco e o banco ganhe
