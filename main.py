@@ -59,12 +59,12 @@ while novamente:
     banco = (back.sorteia_cartas(2,baralhos))
 
     # Realiza a conta das cartas
-    # jogador_soma = jogador[0] + jogador[1]
-    # banco_soma = banco[0] + banco[1]
+    jogador_soma = jogador[0] + jogador[1]
+    banco_soma = banco[0] + banco[1]
    
     # MANIPULANDO O JOGO PARA TESTES
-    jogador_soma = 1
-    banco_soma = 8
+    # jogador_soma = 1
+    # banco_soma = 8
 
     #Caso a soma das cartas for maior que 10 corrija para somente a unidade
     if (jogador_soma >= 10):
@@ -96,7 +96,7 @@ while novamente:
                     pagamento_corrigido = pagamento - (pagamento * 0.1436)
                     fichas_atuais += pagamento_corrigido
 
-                print("{1}B , Seu novo saldo é: {0:.2f}".format(fichas_atuais,baralhos))
+                print("{1}B , Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
                 status = False
 
 
@@ -116,7 +116,7 @@ while novamente:
                     pagamento = fichas_apostadas
                     pagamento_ok = pagamento - (pagamento * 0.124)
                     fichas_atuais += pagamento_ok
-                print("{1}B, Seu novo saldo é: {0:2.f}".format(fichas_atuais,baralhos))
+                print("{1}B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
                 status = False
 
 
@@ -139,7 +139,7 @@ while novamente:
                     recebe_correto_ok = recebe_correto - (recebe_correto * 0.0106)
                     fichas_atuais += recebe_correto_ok
 
-                print("{1}B, Seu novo saldo é: {0:2.f}".format(fichas_atuais,baralhos))
+                print("{1} B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
                 status = False
 
         #Caso aposte em algúem que não ganhou 
@@ -258,7 +258,7 @@ while novamente:
 
         # Caso aposte no banco e o banco ganhe
         elif (banco_soma == 8 or banco_soma == 9) and (jogador_soma != 8 or jogador_soma != 9) and (vencedor_apostado == 2):
-            print("!O BANCO GANHOU!")
+            print("O BANCO GANHOU!")
             if baralhos == 1:
                 recebe = 0.95 * fichas_apostadas
                 recebe_correto = math.floor(recebe)
@@ -274,7 +274,7 @@ while novamente:
                 recebe_correto = math.floor(recebe)
                 recebe_correto_ok = recebe_correto - (recebe_correto * 0.0106)
                 fichas_atuais += recebe_correto_ok
-            print("Seu novo saldo é: {0:.2f}".format(fichas_atuais))
+            print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
         # Caso aposte em alguém que não ganhou
         else:
