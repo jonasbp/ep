@@ -13,17 +13,17 @@ novamente = True
 novaflag = True
 
 fichas_atuais = 10
-
+print("Olá. Seja bem-vindo ao jogo de cassinos BACARÁ.")
 print("BARALHOS DISPONÍVEIS:")
-print("[1] - Para jogar com 1 baralhos")
-print("[6] - Para jogar com 6 baralhos")
-print("[8] - Para jogar com 8 baralhos")
+print("[1] - Para jogar com 1 baralho, digite 1.")
+print("[6] - Para jogar com 6 baralhos, digite 6.")
+print("[8] - Para jogar com 8 baralhos, digite 8.")
 contador = True
 
 while contador:
-    baralhos = int(input("Com quantos baralhos você deseja jogar? : [1/6/8]"))
+    baralhos = int(input("Olá! Com quantos baralhos você deseja jogar? : [1/6/8]"))
     if baralhos == 6 or baralhos == 8 or baralhos == 1:
-        print("Baralho escolhido,vamos começar o jogo")
+        print("Você escolheu o baralho! Agora é hora de começar o jogo. :)")
         contador = False
     else:
         print("Você digitou errado")
@@ -31,7 +31,7 @@ while contador:
 
 
 while novamente:
-    print("INICIO : Você tem {0} fichas".format(fichas_atuais))
+    print("INICIO : Você possui {0} fichas".format(fichas_atuais))
 
     print("[1] - APOSTAR NO JOGADOR")
     print("[2] - APOSTAR NO BANCO" )
@@ -39,20 +39,20 @@ while novamente:
 
 
     # Confere se o usuário digitou o número correto
-    vencedor_apostado = int(input("Em quem você deseja apostar? digite o número: "))
+    vencedor_apostado = int(input("Em quem você deseja apostar? Por favor, digite o respectivo número dentro das chaves: "))
     if vencedor_apostado == 1 or vencedor_apostado == 2 or vencedor_apostado == 3:
         print("APOSTA EM {0} REGISTRADA.".format(vencedor_apostado))
     else:
         print("OPERAÇÃO NEGADA")
-        vencedor_apostado = int(input("Em quem você deseja apostar? Digite o número: "))
+        vencedor_apostado = int(input("Em quem você deseja apostar? Por favor, dgite o número de acordo: "))
 
     # Confere se o saldo é suficiente para a aposta
-    fichas_apostadas = int(input("Quantas fichas deseja apostar em quem você selecionou?"))
+    fichas_apostadas = int(input("Quantas fichas você deseja apostar em quem selecionou?"))
     if fichas_atuais >= fichas_apostadas:
         print("APOSTA CONFIRMADA: SALDO SUFICIENTE")
     else:
         print("APOSTA NEGADA: SALDO INSUFICIENTE")
-        fichas_apostadas = int(input("Quantas fichas deseja apostar em quem você selecionou?"))
+        fichas_apostadas = int(input("Quantas fichas você deseja apostar em quem selecionou?"))
 
     # Distribuição das cartas aos participantes
     jogador = (back.sorteia_cartas(2,baralhos))
@@ -81,7 +81,7 @@ while novamente:
         if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma == 9):
         # Caso aposte no empate e o empate ganhe
             if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
-                print("Uau! Você apostou noe empate e empatou!")
+                print("Uau!!! Você apostou no empate e... empatou!")
                 # Comissão da casa para empate
                 if baralhos == 1:
                     pagamento = (fichas_apostadas * 8)
@@ -144,9 +144,9 @@ while novamente:
 
         #Caso aposte em algúem que não ganhou 
             else:
-                print("Você perdeu! :(")
+                print("Não foi dessa vez que você consegui, continue tentando. :(")
                 fichas_atuais = fichas_atuais - fichas_apostadas
-                print("Você tem: {0},fichas".format(fichas_atuais))
+                print("Você possui: {0},fichas".format(fichas_atuais))
                 status = False
                 # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
         else:
@@ -155,14 +155,14 @@ while novamente:
         # Caso não resulte em 6 ou 7 o jogo empata 
         if (jogador_soma == 6 or jogador_soma == 7) and (banco_soma == 6 or banco_soma == 7): 
                 if vencedor_apostado == 3:
-                    print("Uau você votou no empate e empatou!")
+                    print("Uau!!! você apostou no empate e... empatou!")
                     fichas_atuais += (fichas_apostadas * 8)
                     print("Seu novo saldo é: {0}".format(fichas_atuais))
                     status2 = False
                 else:
-                    print("O jogo empatou e você não votou no empate :(")
+                    print("Que pena! O jogo empatou, mas você não votou no empate... :(")
                     fichas_atuais -= fichas_apostadas
-                    print("Você tem: {0},fichas".format(fichas_atuais))
+                    print("Você possui: {0},fichas".format(fichas_atuais))
                     status2 = False
 
         else: 
@@ -335,7 +335,7 @@ while novamente:
             #Entrega ou não carta para o banco
             
             if recebe3 == True:
-                print("banco recebeu carta nova")
+                print("O banco recebeu uma nova carta.")
                 # cartas recebecidas + carta ganhada
                 nova_carta_banco = back.sorteia_cartas(1,baralhos)
                 # print("Nova carta: {0}".format(nova_carta_banco))
@@ -344,7 +344,7 @@ while novamente:
                     banco_soma = banco_soma % 10
                 # print("M5 B: NOVA SOMA: {0}".format(banco_soma))
             else:
-                print("Você não receberá nova carta")
+                print("Você não receberá uma nova carta.")
 
         # Caso o jogador não tenha recebido uma carta 
         if jogador_soma >= 6:
@@ -359,7 +359,7 @@ while novamente:
             
         # Caso aposte no empate e o empate ganhe
         if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
-            print("Uau! Você apostou no empate e empatou!")
+            print("Uau!!! Você apostou no empate e... empatou!")
             # Comissão da casa para empate
             if baralhos == 1:
                 pagamento = (fichas_apostadas * 8)
@@ -439,7 +439,7 @@ while novamente:
 
             #Empate
         elif jogador_soma == banco_soma and (vencedor_apostado == 3):
-            print("Uau! Você apostou no empate e empatou!")
+            print("Uau!!! Você apostou no empate e... empatou!")
             # Comissão da casa para empate
             if baralhos == 1:
                 pagamento = (fichas_apostadas * 8)
@@ -478,7 +478,7 @@ while novamente:
             novaflag = False
         # Caso aposte em alguém que não ganhou
         else:
-            print("Você apostou em algém que não ganhou :(")
+            print("Não foi dessa vez que você consegui, continue tentando. :(")
             fichas_atuais = fichas_atuais - fichas_apostadas
             novaflag = False
 
@@ -497,9 +497,9 @@ while novamente:
                 novamente = True
                 i = 0
             else:
-                print("Digite de forma correta")
+                print("Digite a forma correta!")
     #Caso não tenha fichas restantes o jogo termina        
     else:
         novamente = False
 
-print("OBRIGADO POR JOGAR! ")
+print("MUITO OBRIGADO POR JOGAR! NOS VEMOS EM UMA PRÓXIMA PARTIDA DO JOGO BACARÁ. =) ")
