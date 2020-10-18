@@ -47,8 +47,10 @@ while novamente:
     # Realiza a conta das cartas
     jogador_soma = jogador[0] + jogador[1]
     banco_soma = banco[0] + banco[1]
-    # jogador_soma = 0
-    # banco_soma = 8
+   
+    # MANIPULANDO O JOGO PARA TESTES
+    # jogador_soma = 5
+    # banco_soma = 5
 
     #Caso a soma das cartas for maior que 10 corrija para somente a unidade
     if (jogador_soma >= 10):
@@ -57,8 +59,8 @@ while novamente:
     if banco_soma >= 10:
         banco_soma = banco_soma % 10
 
-    print("O jogador recebeu: {0}".format(jogador_soma))
-    print("O banco recebeu: {0}".format(banco_soma))
+    # print("O jogador recebeu: {0}".format(jogador_soma))
+    # print("O banco recebeu: {0}".format(banco_soma))
 
     while status:
         # Caso as cartas já resultem em 8 ou 9
@@ -69,7 +71,6 @@ while novamente:
                 fichas_atuais += (fichas_apostadas * 8)
                 print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
-                # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
 
         # Caso aposte no jogador e o jogador ganhe
@@ -78,7 +79,6 @@ while novamente:
                 fichas_atuais = fichas_atuais + fichas_apostadas
                 print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
-                # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
 
         # Caso aposte no banco e o banco ganhe
@@ -89,7 +89,6 @@ while novamente:
                 fichas_atuais = fichas_atuais + recebe_correto
                 print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
-                # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
         #Caso aposte em algúem que não ganhou 
             else:
@@ -104,7 +103,7 @@ while novamente:
         # Caso não resulte em 6 ou 7 o jogo empata 
         if (jogador_soma == 6 or jogador_soma == 7) and (banco_soma == 6 or banco_soma == 7): 
                 if vencedor_apostado == 3:
-                    print(" 6or7 Uau você votou no empate e empatou!")
+                    print("Uau você votou no empate e empatou!")
                     fichas_atuais += (fichas_apostadas * 8)
                     print("Seu novo saldo é: {0}".format(fichas_atuais))
                     status2 = False
@@ -114,7 +113,6 @@ while novamente:
                     print("Você tem: {0},fichas".format(fichas_atuais))
                     status2 = False
 
-                # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
         else: 
             status2 = False
             
@@ -126,20 +124,20 @@ while novamente:
         if jogador_soma <= 5:
             # cartas recebecidas + carta ganhada
             nova_carta_jogador = back.sorteia_cartas(1)
-            print("Nova carta: {0}".format(nova_carta_jogador))
+            # print("Nova carta: {0}".format(nova_carta_jogador))
             jogador_soma += nova_carta_jogador[0]
             if (jogador_soma >= 10):
                 jogador_soma = jogador_soma % 10
-            print("M5 J: NOVA SOMA: {0}".format(jogador_soma))
+            # print("M5 J: NOVA SOMA: {0}".format(jogador_soma))
 
         if banco_soma <= 5:
             # cartas recebecidas + carta ganhada
             nova_carta_banco = back.sorteia_cartas(1)
-            print("Nova carta: {0}".format(nova_carta_banco))
+            # print("Nova carta: {0}".format(nova_carta_banco))
             banco_soma += nova_carta_banco[0]
             if banco_soma >= 10:
                 banco_soma = banco_soma % 10
-            print("M5 B: NOVA SOMA: {0}".format(banco_soma))
+            # print("M5 B: NOVA SOMA: {0}".format(banco_soma))
             
         # Caso aposte no empate e o empate ganhe
         if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
@@ -147,7 +145,6 @@ while novamente:
             fichas_atuais += (fichas_apostadas * 8)
             print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
-            # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
 
         # Caso aposte no jogador e o jogador ganhe
@@ -156,7 +153,6 @@ while novamente:
             fichas_atuais += fichas_apostadas
             print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
-            # ADICIONAR AQUI A VOLTA PARA O INÍCIO PARA JOGAR NOVAMENTE
 
             #A maior carta ganha
         elif jogador_soma > banco_soma and (vencedor_apostado == 1):
@@ -200,6 +196,5 @@ while novamente:
         novaflag = True  
     else:
         novamente = False
-        print("Obrigado por jogar")
 
 print("SUAS FICHAS ACABARAM OBRIGADO!")
