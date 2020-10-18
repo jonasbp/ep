@@ -241,7 +241,7 @@ while novamente:
                 elif banco_soma == 3:
                     recebe3 = True
                 elif banco_soma == 4:
-                    recebe3 = False
+                    recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = False
             #Se a carta do do jogador for 4
