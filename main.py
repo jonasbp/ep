@@ -198,7 +198,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = False
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
                     
             #Se a carta do do jogador for 1
@@ -213,7 +213,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = False
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
 
             #Se a carta do do jogador for 2
@@ -228,7 +228,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
             #Se a carta do do jogador for 3
             elif nova_carta_jogador[0] == 3:
@@ -242,7 +242,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
             #Se a carta do do jogador for 4
             elif nova_carta_jogador[0] == 4:
@@ -256,7 +256,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = True
 
             #Se a carta do do jogador for 5
@@ -271,7 +271,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = True
 
             #Se a carta do do jogador for 6
@@ -286,7 +286,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = True
 
             #Se a carta do do jogador for 7
@@ -301,7 +301,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = True
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = True
 
             #Se a carta do do jogador for 8
@@ -316,7 +316,7 @@ while novamente:
                     recebe3 = False
                 elif banco_soma == 4:
                     recebe3 = False
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
 
             #Se a carta do do jogador for 9
@@ -331,7 +331,7 @@ while novamente:
                     recebe3 = True
                 elif banco_soma == 4:
                     recebe3 = False
-                elif banco_soma == 4:
+                elif banco_soma == 5:
                     recebe3 = False
             #Entrega ou não carta para o banco
             
