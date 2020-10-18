@@ -151,7 +151,7 @@ if numero_jogadores == 1:
 
             #Caso aposte em algúem que não ganhou 
                 else:
-                    print("Não foi dessa vez que você consegui, continue tentando. :(")
+                    print("Não foi dessa vez que você conseguiu :(, continue tentando.")
                     fichas_atuais = fichas_atuais - fichas_apostadas
                     print("Você possui: {0},fichas".format(fichas_atuais))
                     status = False
@@ -485,7 +485,7 @@ if numero_jogadores == 1:
                 novaflag = False
             # Caso aposte em alguém que não ganhou
             else:
-                print("Não foi dessa vez que você consegui, continue tentando. :(")
+                print("Não foi dessa vez que você conseguiu :(, continue tentando.")
                 fichas_atuais = fichas_atuais - fichas_apostadas
                 novaflag = False
 
@@ -704,7 +704,7 @@ if numero_jogadores == 2 :
 
             #Caso aposte em algúem que não ganhou 
                 else:
-                    print("Não foi dessa vez que você consegui, continue tentando. :(")
+                    print("Não foi dessa vez que você conseguiu :( , continue tentando.")
                     fichas_atuais = fichas_atuais - fichas_apostadas
                     print("Você possui: {0},fichas".format(fichas_atuais))
                     status = False
@@ -1038,7 +1038,7 @@ if numero_jogadores == 2 :
                 novaflag = False
             # Caso aposte em alguém que não ganhou
             else:
-                print("Não foi dessa vez que você consegui, continue tentando. :(")
+                print("Não foi dessa vez que você conseguiu, continue tentando. :(")
                 fichas_atuais = fichas_atuais - fichas_apostadas
                 novaflag = False
 
