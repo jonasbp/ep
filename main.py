@@ -13,6 +13,23 @@ novamente = True
 novaflag = True
 
 fichas_atuais = 10
+
+
+print("BARALHOS DISPONÍVEIS:")
+print("[6] - Para jogar com 6 baralhos")
+print("[8] - Para jogar com 8 baralhos")
+contador = True
+
+while contador:
+    baralhos = int(input("Com quantos baralhos você deseja jogar? : [6/8]"))
+    if baralhos == 6 or baralhos == 8:
+        print("Baralho escolhido,vamos começar o jogo")
+        contador = False
+    else:
+        print("Você digitou errado")
+
+
+
 while novamente:
     print("INICIO : Você tem {0} fichas".format(fichas_atuais))
 
@@ -38,8 +55,8 @@ while novamente:
         fichas_apostadas = int(input("Quantas fichas deseja apostar em quem você selecionou?"))
 
     # Distribuição das cartas aos participantes
-    jogador = (back.sorteia_cartas(2))
-    banco = (back.sorteia_cartas(2))
+    jogador = (back.sorteia_cartas(2,baralhos))
+    banco = (back.sorteia_cartas(2,baralhos))
 
     # Realiza a conta das cartas
     jogador_soma = jogador[0] + jogador[1]
@@ -120,7 +137,7 @@ while novamente:
     while novaflag:
         if jogador_soma <= 5:
             # cartas recebecidas + carta ganhada
-            nova_carta_jogador = back.sorteia_cartas(1)
+            nova_carta_jogador = back.sorteia_cartas(1,baralhos)
             # print("Nova carta: {0}".format(nova_carta_jogador))
             jogador_soma += nova_carta_jogador[0]
             if (jogador_soma >= 10):
@@ -129,7 +146,7 @@ while novamente:
 
         if banco_soma <= 5:
             # cartas recebecidas + carta ganhada
-            nova_carta_banco = back.sorteia_cartas(1)
+            nova_carta_banco = back.sorteia_cartas(1,baralhos)
             # print("Nova carta: {0}".format(nova_carta_banco))
             banco_soma += nova_carta_banco[0]
             if banco_soma >= 10:
