@@ -63,8 +63,8 @@ while novamente:
     banco_soma = banco[0] + banco[1]
    
     # MANIPULANDO O JOGO PARA TESTES
-    # jogador_soma = 1
-    # banco_soma = 8
+    jogador_soma = 4
+    banco_soma = 3
 
     #Caso a soma das cartas for maior que 10 corrija para somente a unidade
     if (jogador_soma >= 10):
@@ -173,6 +173,7 @@ while novamente:
         novaflag = False
 
     while novaflag:
+        # Distribuição da terceira carta
         if jogador_soma <= 5:
             # cartas recebecidas + carta ganhada
             nova_carta_jogador = back.sorteia_cartas(1,baralhos)
@@ -182,14 +183,180 @@ while novamente:
                 jogador_soma = jogador_soma % 10
             # print("M5 J: NOVA SOMA: {0}".format(jogador_soma))
 
-        if banco_soma <= 5:
-            # cartas recebecidas + carta ganhada
-            nova_carta_banco = back.sorteia_cartas(1,baralhos)
-            # print("Nova carta: {0}".format(nova_carta_banco))
-            banco_soma += nova_carta_banco[0]
-            if banco_soma >= 10:
-                banco_soma = banco_soma % 10
-            # print("M5 B: NOVA SOMA: {0}".format(banco_soma))
+            #Caso o jogador tenha recebido uma carta
+            print("ENTRANDO NA PARTE NOVA")
+
+            #Se a carta do do jogador for 0
+            if nova_carta_jogador[0] == 0:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+                    
+            #Se a carta do do jogador for 1
+            elif nova_carta_jogador[0] == 1:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+
+            #Se a carta do do jogador for 2
+            elif nova_carta_jogador[0] == 2:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = False
+            #Se a carta do do jogador for 3
+            elif nova_carta_jogador[0] == 3:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+            #Se a carta do do jogador for 4
+            elif nova_carta_jogador[0] == 4:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+
+            #Se a carta do do jogador for 5
+            elif nova_carta_jogador[0] == 5:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+
+            #Se a carta do do jogador for 6
+            elif nova_carta_jogador[0] == 6:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+
+            #Se a carta do do jogador for 7
+            elif nova_carta_jogador[0] == 7:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = True
+
+            #Se a carta do do jogador for 8
+            elif nova_carta_jogador[0] == 8:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+
+            #Se a carta do do jogador for 9
+            elif nova_carta_jogador[0] == 9:
+                if banco_soma == 0:
+                    recebe3 = True
+                elif banco_soma == 1:
+                    recebe3 = True
+                elif banco_soma == 2:
+                    recebe3 = True
+                elif banco_soma == 3:
+                    recebe3 = True
+                elif banco_soma == 4:
+                    recebe3 = False
+                elif banco_soma == 4:
+                    recebe3 = False
+            #Entrega ou não carta para o banco
+            
+            if recebe3 == True:
+                print("banco recebeu carta nova")
+                # cartas recebecidas + carta ganhada
+                nova_carta_banco = back.sorteia_cartas(1,baralhos)
+                # print("Nova carta: {0}".format(nova_carta_banco))
+                banco_soma += nova_carta_banco[0]
+                if banco_soma >= 10:
+                    banco_soma = banco_soma % 10
+                # print("M5 B: NOVA SOMA: {0}".format(banco_soma))
+            else:
+                print("Você não receberá nova carta")
+
+        # Caso o jogador não tenha recebido uma carta 
+        if jogador_soma >= 6:
+            if banco_soma <= 5:
+                # cartas recebecidas + carta ganhada
+                nova_carta_banco = back.sorteia_cartas(1,baralhos)
+                # print("Nova carta: {0}".format(nova_carta_banco))
+                banco_soma += nova_carta_banco[0]
+                if banco_soma >= 10:
+                    banco_soma = banco_soma % 10
+                # print("M5 B: NOVA SOMA: {0}".format(banco_soma))
             
         # Caso aposte no empate e o empate ganhe
         if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
