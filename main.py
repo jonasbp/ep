@@ -232,6 +232,7 @@ while novamente:
 
 
             #A maior carta ganha depois de ter distribuido a 3 carta
+            # Começar a seguir regras 3 carta
             
             #jogador ganhou
         elif jogador_soma > banco_soma and (vencedor_apostado == 1):
