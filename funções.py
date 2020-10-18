@@ -24,7 +24,15 @@ print(len(baralhos_8))
 
 # Sorteia a quantidade de cartas desejadas
 def sorteia_cartas(quantidade,baralhos):
-    if baralhos == 6:
+    if baralhos == 1:
+        sorteados = []
+        i = 0
+        while quantidade > i:
+            sorte = random.randint(0,51)
+            sorteados.append(cartas_totais[sorte])
+            i += 1
+        return sorteados
+    elif baralhos == 6:
         sorteados = []
         i = 0
         while quantidade > i:
