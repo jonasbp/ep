@@ -1,5 +1,4 @@
-# Exercício Programa: Bacará Simplificado
-Data de entrega: 18/10/2020, via GitHub </br>
-Infos : https://insper.github.io/design-de-software/ep/
-
+# EP - Design de Software: Bacará Simplificado
 ARQUIVO PARA INICIAR O PROGRAMA: main.py
+Equipe: Jonas Bonfá Pelegrina e Layne Pereira da Silva
+Data: 16/10/2020
