@@ -96,7 +96,7 @@ while novamente:
                     pagamento_corrigido = pagamento - (pagamento * 0.1436)
                     fichas_atuais += pagamento_corrigido
 
-                print("{1}B , Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
+                print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
 
 
@@ -116,13 +116,13 @@ while novamente:
                     pagamento = fichas_apostadas
                     pagamento_ok = pagamento - (pagamento * 0.124)
                     fichas_atuais += pagamento_ok
-                print("{1}B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
+                print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
 
 
         # Caso aposte no banco e o banco ganhe
             elif (banco_soma == 8 or banco_soma == 9) and (jogador_soma != 8 or jogador_soma != 9) and (vencedor_apostado == 2):
-                print("!O BANCO GANHOU!")
+                print("O BANCO GANHOU!")
                 if baralhos == 1:
                     recebe = 0.95 * fichas_apostadas
                     recebe_correto = math.floor(recebe)
@@ -139,7 +139,7 @@ while novamente:
                     recebe_correto_ok = recebe_correto - (recebe_correto * 0.0106)
                     fichas_atuais += recebe_correto_ok
 
-                print("{1} B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
+                print("Seu novo saldo é: {0}".format(fichas_atuais))
                 status = False
 
         #Caso aposte em algúem que não ganhou 
@@ -184,7 +184,6 @@ while novamente:
             # print("M5 J: NOVA SOMA: {0}".format(jogador_soma))
 
             #Caso o jogador tenha recebido uma carta
-            print("ENTRANDO NA PARTE NOVA")
             recebe3 = True
             #Se a carta do do jogador for 0
             if nova_carta_jogador[0] == 0:
@@ -360,7 +359,7 @@ while novamente:
             
         # Caso aposte no empate e o empate ganhe
         if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
-            print("Uau! Você apostou noe empate e empatou!")
+            print("Uau! Você apostou no empate e empatou!")
             # Comissão da casa para empate
             if baralhos == 1:
                 pagamento = (fichas_apostadas * 8)
@@ -374,7 +373,7 @@ while novamente:
                 pagamento = (fichas_apostadas * 8)
                 pagamento_corrigido = pagamento - (pagamento * 0.1436)
                 fichas_atuais += pagamento_corrigido
-            print("{1}B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
+            print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
 
 
@@ -440,7 +439,7 @@ while novamente:
 
             #Empate
         elif jogador_soma == banco_soma and (vencedor_apostado == 3):
-            print("Uau! Você apostou noe empate e empatou!")
+            print("Uau! Você apostou no empate e empatou!")
             # Comissão da casa para empate
             if baralhos == 1:
                 pagamento = (fichas_apostadas * 8)
@@ -454,7 +453,7 @@ while novamente:
                 pagamento = (fichas_apostadas * 8)
                 pagamento_corrigido = pagamento - (pagamento * 0.1436)
                 fichas_atuais += pagamento_corrigido
-            print("{1}B, Seu novo saldo é: {0}".format(fichas_atuais,baralhos))
+            print("Seu novo saldo é: {0}".format(fichas_atuais))
             novaflag = False
 
         # Caso aposte no banco e o banco ganhe
@@ -479,7 +478,7 @@ while novamente:
             novaflag = False
         # Caso aposte em alguém que não ganhou
         else:
-            print("Voce apostou em algém que não ganhou")
+            print("Você apostou em algém que não ganhou :(")
             fichas_atuais = fichas_atuais - fichas_apostadas
             novaflag = False
 
