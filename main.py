@@ -2,9 +2,6 @@
 # Equipe: Jonas Bonfá Pelegrina e Layne Pereira da Silva
 # Data: 16/10/2020
 
-# Cantor mais ouvido enquanto programava (Jonas): Alcione
-# Cantor mais ouvido enquanto programava (Layne):
-
 
 
 # Importando as funções do arquivo funções.py
