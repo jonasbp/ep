@@ -189,12 +189,22 @@ while novamente:
 
     #validando caso tenha fixas restantes
     if fichas_atuais > 0:
-        novamente = True
         status = True
         status2 = True
-        novamente = True
-        novaflag = True  
+        novaflag = True 
+        i = 1
+        while i == 1:
+            continuar = input("Você deseja continuar jogando? [S/N]")
+            if continuar == "N":
+                novamente = False
+                i = 0
+            elif continuar == "S":
+                novamente = True
+                i = 0
+            else:
+                print("Digite de forma correta")
+            
     else:
         novamente = False
 
-print("SUAS FICHAS ACABARAM OBRIGADO!")
+print("OBRIGADO POR JOGAR! ")
