@@ -16,7 +16,7 @@ fichas_atuais = 10
 fichas_atuais2 = 10
 
 
-print("Olá. Seja bem-vindo ao jogo de cassinos BACARÁ.")
+print("Olá. Seja bem-vindo ao jogo de BACARÁ.")
 numero_jogadores = int(input("QUANTOS JOGADORES IRÃO JOGAR? 1 OU 2 ?[1/2]"))
 
 #CASO SEJA SOMENTE UM JOGADOR
@@ -46,7 +46,7 @@ if numero_jogadores == 1:
 
 
         # Confere se o usuário digitou o número correto
-        vencedor_apostado = int(input("Em quem você deseja apostar? Por favor, digite o respectivo número dentro das chaves: "))
+        vencedor_apostado = int(input("Em quem você deseja apostar? Por favor, digite o número: "))
         if vencedor_apostado == 1 or vencedor_apostado == 2 or vencedor_apostado == 3:
             print("APOSTA EM {0} REGISTRADA.".format(vencedor_apostado))
         else:
@@ -561,14 +561,14 @@ if numero_jogadores == 2 :
             print("APOSTA CONFIRMADA: SALDO SUFICIENTE")
         else:
             print("APOSTA NEGADA: SALDO INSUFICIENTE")
-            fichas_apostadas = int(input("Quantas fichas você deseja apostar em quem selecionou?"))
+            fichas_apostadas = int(input("J1 - Quantas fichas você deseja apostar em quem selecionou?"))
         
         #Confere J2
         if fichas_atuais2 >= fichas_apostadas2:
             print("APOSTA CONFIRMADA: SALDO SUFICIENTE")
         else:
             print("APOSTA NEGADA: SALDO INSUFICIENTE")
-            fichas_apostadas = int(input("Quantas fichas você deseja apostar em quem selecionou?"))
+            fichas_apostadas = int(input("J2 - Quantas fichas você deseja apostar em quem selecionou?"))
 
         # Distribuição das cartas aos participantes
         jogador = (back.sorteia_cartas(2,baralhos))
@@ -592,12 +592,13 @@ if numero_jogadores == 2 :
         # print("O jogador recebeu: {0}".format(jogador_soma))
         # print("O banco recebeu: {0}".format(banco_soma))
 
+        #PARA O JOGADOR 1
         while status:
             # Caso as cartas já resultem em 8 ou 9
             if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma == 9):
             # Caso aposte no empate e o empate ganhe
                 if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado == 3):
-                    print("Uau!!! Você apostou no empate e... empatou!")
+                    print("J1 - Uau!!! Você apostou no empate e... empatou!")
                     # Comissão da casa para empate
                     if baralhos == 1:
                         pagamento = (fichas_apostadas * 8)
@@ -612,13 +613,36 @@ if numero_jogadores == 2 :
                         pagamento_corrigido = pagamento - (pagamento * 0.1436)
                         fichas_atuais += pagamento_corrigido
 
-                    print("Seu novo saldo é: {0}".format(fichas_atuais))
+                    print("J1 - Seu novo saldo é: {0}".format(fichas_atuais))
                     status = False
+        #PARA O JOGADOR 2
+        while status2:
+            # Caso as cartas já resultem em 8 ou 9
+            if (jogador_soma == 8 or jogador_soma == 9) or (banco_soma == 8 or banco_soma == 9):
+            # Caso aposte no empate e o empate ganhe
+                if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma == 8 or banco_soma == 9) and (vencedor_apostado2 == 3):
+                    print("J2 - Uau!!! Você apostou no empate e... empatou!")
+                    # Comissão da casa para empate
+                    if baralhos == 1:
+                        pagamento = (fichas_apostadas * 8)
+                        pagamento_corrigido = pagamento - (pagamento * 0.1575)
+                        fichas_atuais += pagamento_corrigido
+                    elif baralhos == 6:
+                        pagamento = (fichas_apostadas * 8)
+                        pagamento_corrigido = pagamento - (pagamento * 0.1444)
+                        fichas_atuais += pagamento_corrigido
+                    else:
+                        pagamento = (fichas_apostadas * 8)
+                        pagamento_corrigido = pagamento - (pagamento * 0.1436)
+                        fichas_atuais += pagamento_corrigido
 
+                    print("J2 - Seu novo saldo é: {0}".format(fichas_atuais))
+                    status2 = False
 
             # Caso aposte no jogador e o jogador ganhe
-                elif (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 and banco_soma != 9) and (vencedor_apostado == 1):
-                    print("O JOGADOR GANHOU!")
+            #JOGADOR 1
+                if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 and banco_soma != 9) and (vencedor_apostado == 1):
+                    print("J1 - O JOGADOR GANHOU!")
                     # Comissão para caso o jogador ganhe
                     if baralhos == 1:
                         pagamento = fichas_apostadas
@@ -632,8 +656,28 @@ if numero_jogadores == 2 :
                         pagamento = fichas_apostadas
                         pagamento_ok = pagamento - (pagamento * 0.124)
                         fichas_atuais += pagamento_ok
-                    print("Seu novo saldo é: {0}".format(fichas_atuais))
+                    print("J1 - Seu novo saldo é: {0}".format(fichas_atuais))
                     status = False
+
+                 # Caso aposte no jogador e o jogador ganhe
+                 #JOGADOR 2 
+                if (jogador_soma == 8 or jogador_soma == 9) and (banco_soma != 8 and banco_soma != 9) and (vencedor_apostado2 == 1):
+                    print("J2 - O JOGADOR GANHOU!")
+                    # Comissão para caso o jogador ganhe
+                    if baralhos == 1:
+                        pagamento = fichas_apostadas
+                        pagamento_ok = pagamento - (pagamento * 0.0129)
+                        fichas_atuais += pagamento_ok
+                    elif baralhos == 6:
+                        pagamento = fichas_apostadas
+                        pagamento_ok = pagamento - (pagamento * 0.0124)
+                        fichas_atuais += pagamento_ok
+                    else:
+                        pagamento = fichas_apostadas
+                        pagamento_ok = pagamento - (pagamento * 0.124)
+                        fichas_atuais += pagamento_ok
+                    print("J2 - Seu novo saldo é: {0}".format(fichas_atuais))
+                    status2 = False
 
 
             # Caso aposte no banco e o banco ganhe

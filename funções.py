@@ -17,10 +17,6 @@ cartas_totais = cartas_baralho_paus + cartas_baralho_copas + cartas_baralho_espa
 baralhos_6 = cartas_totais * 6
 baralhos_8 = cartas_totais * 8
 
-print(len(baralhos_6))
-print(len(baralhos_8))
-
-
 
 # Sorteia a quantidade de cartas desejadas
 def sorteia_cartas(quantidade,baralhos):
